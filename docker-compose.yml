@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: 9mREsvXDs9Gk89E
+      POSTGRES_DB: db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - my-postgres-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+volumes:
+  my-postgres-data:
